@@ -1,6 +1,9 @@
-require "ip_finder/version"
+require 'httparty'
+require 'pry'
+require 'dotenv'
 
-module IpFinder
-  class Error < StandardError; end
-  # Your code goes here...
-end
+
+require_relative "../lib/api"
+require_relative "../lib/cli"
+
+
