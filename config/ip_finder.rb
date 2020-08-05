@@ -1,6 +1,12 @@
-require 'httparty'
-require 'pry'
-require 'dotenv'
+require "HTTParty"
+require "pry"
+require "dotenv"
+require "colorize"
+require "uri"
+require "json"
+require "net/http"
+
+
 
 
 
