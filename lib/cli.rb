@@ -1,10 +1,13 @@
 class CLI
    attr_reader :api
 
+   def initialize 
+    @api = API.new
+   end 
 
     def start
         system("clear")
-        API.new
+        @api
         welcome
         @user_input = nil
         main_menu
@@ -13,32 +16,32 @@ class CLI
     end 
 
     def welcome
-        puts "Welcome to IP_FUNFINDER".colorize(:yellow)
+        puts "Welcome to IP_FOODFINDER"
         "\n"
     end 
         
     def main_menu
-        puts "Please select an option"
-        puts "1. View Location"
-        puts "2. View Currency"
-        puts "3. View Timezone"
-        puts "4. View Activities"
-        puts "5. Exit".colorize(:red)
+        info = User.all.first
+        time1 = Time.new
+        puts ".....Please select an option........"
+        puts "     1. View Location"
+        puts "     2. View Timezone"
+        puts "     3. View Resturants"
+        puts "4. Exit"
 
-        until @user_input == "5"
+        until @user_input == "4"
             @user_input = gets.chomp
 
        if @user_input == "1"
-        puts "Your location"
-        show_location
+        puts "Your location is #{info.city}, #{info.regionName}"
         
-       elsif @user_input == "2"
-        puts "Current Curency used"
-        show_currency
+        elsif @user_input == "2"
+        puts "Your are currently in the #{info.timezone} timezone :" + time1.inspect
+        
         elsif @user_input == "3"
-        puts "Your are currently in the ---- timezone"
-        else
-            puts "Invaild selection".colorize(:red) unless @user_input == "5"
+
+
+            puts "Invaild selection" unless @user_input == "5"
         end 
 
     end 
@@ -46,13 +49,7 @@ class CLI
 
     end 
 
-    def show_location
-        
-    end 
-
-    def show_currency
-        
-    end 
+    
 
 
     
