@@ -1,14 +1,17 @@
-require "HTTParty"
-require "pry"
-require "dotenv"
-require "colorize"
-require "uri"
-require "json"
-require "net/http"
+require 'bundler/setup'
+require 'dotenv/load'
+require "lolize/auto"
+Bundler.require
 
 
 
 
+
+
+
+
+require_relative "../lib/User"
+require_relative "../lib/Resturants"
 
 require_relative "../lib/api"
 require_relative "../lib/cli"
