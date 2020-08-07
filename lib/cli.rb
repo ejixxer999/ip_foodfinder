@@ -1,5 +1,5 @@
 class CLI
-   attr_reader :api
+   attr_reader :api, :restaurant
 
    def initialize 
     @api = API.new
@@ -8,6 +8,7 @@ class CLI
     def start
         system("clear")
         @api
+        @restaurant = restaurant
         welcome
         @user_input = nil
         main_menu
@@ -26,7 +27,7 @@ class CLI
         puts ".....Please select an option........"
         puts "     1. View Location"
         puts "     2. View Timezone"
-        puts "     3. View Resturants"
+        puts "     3. View restaurant"
         puts "4. Exit"
 
         until @user_input == "4"
