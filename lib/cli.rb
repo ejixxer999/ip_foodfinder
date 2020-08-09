@@ -1,16 +1,21 @@
 class CLI
-   attr_reader :api, :restaurant
+   attr_reader :api, :restaurant, :loading
 
-   def initialize 
+   def initialize
     @api = API.new
+    @loading = Loading.go
+
    end 
 
     def start
         system("clear")
         @api
         @restaurant = restaurant
+        @loading
+        sleep (0.5)
         welcome
         @user_input = nil
+
         main_menu
         
     
@@ -20,12 +25,13 @@ class CLI
 
     def welcome
         puts "  
+        
             )
        __..---..__
    ,-='  /  |  \  `=-.
   :--..___________..--;
    \.,_____________,./" "\n" "\n"
-        puts "Welcome to IP_FOODFINDER"
+        puts "  Welcome to IP_FOODFINDER"
         "\n"
     end 
         
@@ -78,22 +84,15 @@ end
     def selector 
         puts "..Pick Restaurant for more info..\n"
        choice = nil 
+       
        while choice != "menu"
        choice = gets.chomp
+       if (1..Restaurant.all.length).include? (choice.to_i)
        res_info(choice.to_i - 1) unless choice == "menu"
-
-       
-
-       if choice.to_i > Restaurant.all.length 
-        puts "Invalid Selection"
        else
-       
-       end 
-
-    
-        
-       
-    end
+        puts "Invalid Selection"
+       end
+     end
 
     menu
 
