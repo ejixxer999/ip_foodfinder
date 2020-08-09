@@ -22,7 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+IP_Finder was created to take in the users specific location data based on 'lon' 'lat' and display a list of restaurants. The restaurants displayed are within 1 mile of the user and are not displayed in any order. Along with displaying the restaurants name, the address, phone number, price range, and type of food served is also shown. NOTE(not every choice has updated data on certine information). IP_finder can also show the users current location by City, and State, along with timezone. 
+
+NOTES*
+range is shown by '$'. The more '$' the more expensive it is 
+food type is shown by country of origin first and then food style second. 
+
+To run gem please have the list of gems preinstalled(see GEMFILE). 
+to start the gem run bin/run (permissions are open)
+
+##API's
+Two API's where used for development of this gem. 
+The first API is called IP Geolocation from ip-api.com. This API is used to pull the location, and timezone of the user through their ip address.
+This information was then passed on to the first, and second option for the user to view. Also the Longitude and latitude data was passed on to the second API.
+The second API is called Menuapi.XYZ from rapidapi.com. This API is used to gather the information of available restaurants with in a one mile radius of the user. 
+The information is gathered using the coordinates of the users location provided by the first API. 
+
+
 
 ## Development
 
