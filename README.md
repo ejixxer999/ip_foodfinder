@@ -1,8 +1,4 @@
-# IpFinder
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ip_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -31,7 +27,7 @@ food type is shown by country of origin first and then food style second.
 To run gem please have the list of gems preinstalled(see GEMFILE). 
 to start the gem run bin/run (permissions are open)
 
-##API's
+## API's
 Two API's where used for development of this gem. 
 The first API is called IP Geolocation from ip-api.com. This API is used to pull the location, and timezone of the user through their ip address.
 This information was then passed on to the first, and second option for the user to view. Also the Longitude and latitude data was passed on to the second API.
