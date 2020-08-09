@@ -20,6 +20,7 @@ class API
         end 
         
     def get_res_data
+
         location = get_coor_ip
 
         response = HTTParty.get("https://us-restaurant-menus.p.rapidapi.com/restaurants/search/geo?page=1&lon=#{location["lon"]}&lat=#{location["lat"]}&distance=1",
