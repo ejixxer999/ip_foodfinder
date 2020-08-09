@@ -130,7 +130,7 @@ puts "Loading...."
 
       def self.go
         system ("clear")
-        puts "\n\n💃🏻 TIME TO HAVE SOME FUN 🕺🏿 \n\n"
+       
         self.animation
       end 
 
