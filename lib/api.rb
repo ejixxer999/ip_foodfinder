@@ -30,9 +30,34 @@ class API
           parameters:{
              "parameter" => "value"
              })
-           
-        
-    end
+             
+             data = response["result"]["data"]
+             
+                 data.each do |restaurant_name|
+                    info_hash = {}
+                    info_hash [:name] = restaurant_name ["restaurant_name"]
+                    info_hash [:address] = restaurant_name["address"]["formatted"]
+                    info_hash [:hours] = restaurant_name["hours"]
+                    info_hash [:phone] = restaurant_name["restaurant_phone"]
+                    info_hash [:range] = restaurant_name["price_range"]
+                    info_hash [:type] = restaurant_name["cuisines"]
+                     Restaurant.new(info_hash) 
+                    
+                end
+            
+            
+            
+
+            
+
+            
+              
+       end
+     
+
+    
 end 
+
+
 API.new.get_coor_ip
 API.new.get_res_data
